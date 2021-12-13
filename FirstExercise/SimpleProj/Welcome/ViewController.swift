@@ -26,7 +26,10 @@ class ViewController: UIViewController {
         
         self.view = WelcomeView(frame: self.view.frame, buttonAction: { [weak self] in
             guard let self = self else { return }
-            print("Move to next")
+            let nextVc = ListViewController()
+            self.navigationController?.pushViewController(nextVc, animated: true)
+        }, collectionAction: { [weak self] in
+            guard let self = self else { return }
             let nextVc = ListViewController()
             self.navigationController?.pushViewController(nextVc, animated: true)
         })
