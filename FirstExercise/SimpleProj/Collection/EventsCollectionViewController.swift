@@ -14,6 +14,8 @@ class EventsCollectionViewController: UIViewController {
     var collectionView: EventsCollectionView?
     let events = BehaviorRelay<[SGEvent]>(value: [])
     let disposeBag = DisposeBag()
+    
+    var currentScrollOffset: CGPoint = CGPoint()
 
     override func viewDidLoad() {
         super.viewDidLoad()

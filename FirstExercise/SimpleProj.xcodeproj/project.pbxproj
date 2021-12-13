@@ -27,6 +27,7 @@
 		7861DF0A2767A6C30059195C /* EventsCollectionViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF092767A6C30059195C /* EventsCollectionViewController+Extensions.swift */; };
 		7861DF0C2767A6CA0059195C /* EventsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF0B2767A6CA0059195C /* EventsCollectionView.swift */; };
 		7861DF0F2767A74E0059195C /* EventCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF0E2767A74E0059195C /* EventCollectionCell.swift */; };
+		7861DF132767B4AB0059195C /* CarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF122767B4AB0059195C /* CarouselFlowLayout.swift */; };
 		78B4937E275E4D5B001168AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4937D275E4D5B001168AD /* AppDelegate.swift */; };
 		78B49380275E4D5B001168AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4937F275E4D5B001168AD /* SceneDelegate.swift */; };
 		78B49382275E4D5B001168AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B49381275E4D5B001168AD /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		7861DF092767A6C30059195C /* EventsCollectionViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsCollectionViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7861DF0B2767A6CA0059195C /* EventsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionView.swift; sourceTree = "<group>"; };
 		7861DF0E2767A74E0059195C /* EventCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionCell.swift; sourceTree = "<group>"; };
+		7861DF122767B4AB0059195C /* CarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFlowLayout.swift; sourceTree = "<group>"; };
 		78B4937A275E4D5B001168AD /* SimpleProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B4937D275E4D5B001168AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78B4937F275E4D5B001168AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				7861DEE3276755530059195C /* StyleExtension.swift */,
 				7861DEE827675A1E0059195C /* UIExtension.swift */,
 				7861DEF2276762570059195C /* GeneralExtension.swift */,
+				7861DF122767B4AB0059195C /* CarouselFlowLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				7861DF0A2767A6C30059195C /* EventsCollectionViewController+Extensions.swift in Sources */,
 				7861DEDC27674EF60059195C /* ListViewController.swift in Sources */,
 				78B49380275E4D5B001168AD /* SceneDelegate.swift in Sources */,
+				7861DF132767B4AB0059195C /* CarouselFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
