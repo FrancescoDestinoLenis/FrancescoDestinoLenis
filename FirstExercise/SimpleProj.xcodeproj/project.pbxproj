@@ -23,6 +23,10 @@
 		7861DEFD276785730059195C /* PerformerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DEFC276785730059195C /* PerformerCell.swift */; };
 		7861DEFF276785800059195C /* PerformersViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DEFE276785800059195C /* PerformersViewController+Extensions.swift */; };
 		7861DF012767864C0059195C /* PerformersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF002767864C0059195C /* PerformersView.swift */; };
+		7861DF082767A6BB0059195C /* EventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF072767A6BB0059195C /* EventsCollectionViewController.swift */; };
+		7861DF0A2767A6C30059195C /* EventsCollectionViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF092767A6C30059195C /* EventsCollectionViewController+Extensions.swift */; };
+		7861DF0C2767A6CA0059195C /* EventsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF0B2767A6CA0059195C /* EventsCollectionView.swift */; };
+		7861DF0F2767A74E0059195C /* EventCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861DF0E2767A74E0059195C /* EventCollectionCell.swift */; };
 		78B4937E275E4D5B001168AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4937D275E4D5B001168AD /* AppDelegate.swift */; };
 		78B49380275E4D5B001168AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4937F275E4D5B001168AD /* SceneDelegate.swift */; };
 		78B49382275E4D5B001168AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B49381275E4D5B001168AD /* ViewController.swift */; };
@@ -48,6 +52,10 @@
 		7861DEFC276785730059195C /* PerformerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformerCell.swift; sourceTree = "<group>"; };
 		7861DEFE276785800059195C /* PerformersViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PerformersViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7861DF002767864C0059195C /* PerformersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformersView.swift; sourceTree = "<group>"; };
+		7861DF072767A6BB0059195C /* EventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewController.swift; sourceTree = "<group>"; };
+		7861DF092767A6C30059195C /* EventsCollectionViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsCollectionViewController+Extensions.swift"; sourceTree = "<group>"; };
+		7861DF0B2767A6CA0059195C /* EventsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionView.swift; sourceTree = "<group>"; };
+		7861DF0E2767A74E0059195C /* EventCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionCell.swift; sourceTree = "<group>"; };
 		78B4937A275E4D5B001168AD /* SimpleProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B4937D275E4D5B001168AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78B4937F275E4D5B001168AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +164,25 @@
 			path = CollectionCells;
 			sourceTree = "<group>";
 		};
+		7861DF022767A64B0059195C /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				7861DF0D2767A7320059195C /* CollectionCells */,
+				7861DF072767A6BB0059195C /* EventsCollectionViewController.swift */,
+				7861DF092767A6C30059195C /* EventsCollectionViewController+Extensions.swift */,
+				7861DF0B2767A6CA0059195C /* EventsCollectionView.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		7861DF0D2767A7320059195C /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				7861DF0E2767A74E0059195C /* EventCollectionCell.swift */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
 		78B49371275E4D5B001168AD = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +204,7 @@
 		78B4937C275E4D5B001168AD /* SimpleProj */ = {
 			isa = PBXGroup;
 			children = (
+				7861DF022767A64B0059195C /* Collection */,
 				7861DEEA27675D880059195C /* Business */,
 				7861DEE2276755480059195C /* Utils */,
 				7861DEE1276751B50059195C /* Welcome */,
@@ -314,9 +342,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7861DF0F2767A74E0059195C /* EventCollectionCell.swift in Sources */,
 				7861DEF3276762570059195C /* GeneralExtension.swift in Sources */,
 				7861DEE7276758EC0059195C /* EventCell.swift in Sources */,
 				7861DF012767864C0059195C /* PerformersView.swift in Sources */,
+				7861DF0C2767A6CA0059195C /* EventsCollectionView.swift in Sources */,
 				7861DEF52767628E0059195C /* SGEvent.swift in Sources */,
 				7861DEF1276760EC0059195C /* SGResponse.swift in Sources */,
 				78B49382275E4D5B001168AD /* ViewController.swift in Sources */,
@@ -329,8 +359,10 @@
 				7861DEFF276785800059195C /* PerformersViewController+Extensions.swift in Sources */,
 				7861DEE927675A1E0059195C /* UIExtension.swift in Sources */,
 				7861DEDE27674F100059195C /* ListView.swift in Sources */,
+				7861DF082767A6BB0059195C /* EventsCollectionViewController.swift in Sources */,
 				7861DEE4276755530059195C /* StyleExtension.swift in Sources */,
 				7861DEFA276785580059195C /* PerformersViewController.swift in Sources */,
+				7861DF0A2767A6C30059195C /* EventsCollectionViewController+Extensions.swift in Sources */,
 				7861DEDC27674EF60059195C /* ListViewController.swift in Sources */,
 				78B49380275E4D5B001168AD /* SceneDelegate.swift in Sources */,
 			);

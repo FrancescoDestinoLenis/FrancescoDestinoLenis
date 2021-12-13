@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(nextVc, animated: true)
         }, collectionAction: { [weak self] in
             guard let self = self else { return }
-            let nextVc = ListViewController()
+            let nextVc = EventsCollectionViewController()
             self.navigationController?.pushViewController(nextVc, animated: true)
         })
     }
