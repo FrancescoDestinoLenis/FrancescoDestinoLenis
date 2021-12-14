@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WelcomeViewController.swift
 //  SimpleProj
 //
 //  Created by Francesco Destino on 06/12/21.
@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxRelay
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
