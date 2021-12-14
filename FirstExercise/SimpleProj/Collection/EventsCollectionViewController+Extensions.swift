@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension EventsCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension EventsCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return events.value.count
@@ -22,4 +22,16 @@ extension EventsCollectionViewController: UICollectionViewDelegate, UICollection
         
         return cell
     }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if let layout = collectionView?.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let cellwidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+            var offset = targetContentOffset.pointee
+            let index = (offset.x + scrollView.contentInset.left) / cellwidthIncludingSpacing
+            let roundedIndex = round(index)
+            offset = CGPoint(x: roundedIndex * cellwidthIncludingSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
+            
+            targetContentOffset.pointee = offset
+        }
+    }
 }
+

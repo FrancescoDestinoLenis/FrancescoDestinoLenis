@@ -15,6 +15,8 @@ class EventsCollectionViewController: UIViewController {
     let events = BehaviorRelay<[SGEvent]>(value: [])
     let disposeBag = DisposeBag()
     
+    let cellScale: CGFloat = 0.7
+    
     var currentScrollOffset: CGPoint = CGPoint()
 
     override func viewDidLoad() {
@@ -32,7 +34,13 @@ class EventsCollectionViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        self.collectionView = EventsCollectionView(frame: self.view.frame, collectionViewDelegate: self, collectionViewDataSource: self)
+        let screenSize = UIScreen.main.bounds
+        let cellwidth = floor(screenSize.width * cellScale)
+        let cellHeight = floor(screenSize.height * cellScale)
+        let insetX = (view.bounds.width - cellwidth) / 2
+        let insetY = (view.bounds.height - cellwidth) / 2
+        
+        self.collectionView = EventsCollectionView(frame: self.view.frame, collectionViewDelegate: self, collectionViewDataSource: self, cellsize: CGSize(width: cellwidth, height: cellHeight), insetX: insetX, insetY: insetY)
         
         self.view = self.collectionView
         

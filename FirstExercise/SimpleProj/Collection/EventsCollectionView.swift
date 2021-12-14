@@ -10,13 +10,13 @@ import UIKit
 
 class EventsCollectionView: UIView {
     
-    
     public lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: CarouselFlowLayout())
+        let layout = CarouselFlowLayout(scrollDirection: .horizontal, minLineSpacing: 10, minInteritemSpacing: 20)
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isPagingEnabled = true
-        collectionView.contentInsetAdjustmentBehavior = .always
+        
         return collectionView
     }()
     
@@ -26,8 +26,13 @@ class EventsCollectionView: UIView {
         setup()
     }
     
-    init(frame: CGRect, collectionViewDelegate: UICollectionViewDelegate, collectionViewDataSource: UICollectionViewDataSource) {
+    init(frame: CGRect, collectionViewDelegate: UICollectionViewDelegate, collectionViewDataSource: UICollectionViewDataSource, cellsize: CGSize, insetX: CGFloat, insetY: CGFloat) {
         super.init(frame: frame)
+        
+        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.itemSize = cellsize
+        collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
         
         self.collectionView.delegate = collectionViewDelegate
         self.collectionView.dataSource = collectionViewDataSource
@@ -51,8 +56,8 @@ class EventsCollectionView: UIView {
         NSLayoutConstraint.activate([
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 450),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
