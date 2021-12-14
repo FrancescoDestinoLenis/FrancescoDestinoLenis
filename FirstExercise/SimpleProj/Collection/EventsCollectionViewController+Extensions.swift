@@ -11,14 +11,22 @@ import UIKit
 extension EventsCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return events.value.count
+        do {
+            return try events.value().count
+        } catch {
+            return 0
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventCollectionCell.identifier, for: indexPath) as? EventCollectionCell else { return UICollectionViewCell() }
         
-        let event = self.events.value[indexPath.row]
+        do {
+        let event = try self.events.value()[indexPath.row]
         
         cell.configure(event: event)
+        } catch {
+            
+        }
         
         return cell
     }

@@ -11,7 +11,7 @@ import RxRelay
 
 class ListViewController: UIViewController {
     
-    let events = BehaviorRelay<[SGEvent]>(value: [])
+    let events = BehaviorSubject<[SGEvent]>(value: [])
     let disposeBag = DisposeBag()
     
     var listView: ListView?
@@ -41,10 +41,13 @@ class ListViewController: UIViewController {
                 guard let self = self else { return }
                 if let view = self.listView {
                     view.reloadTable()
+                }
+            }, onCompleted: { [weak self] in
+                print("Completed")
+                guard let self = self else { return }
+                if let view = self.listView {
                     view.removeBluerLoader()
                 }
-            }, onCompleted: {
-                print("Completed!!!")
             })
             .disposed(by: disposeBag)
         

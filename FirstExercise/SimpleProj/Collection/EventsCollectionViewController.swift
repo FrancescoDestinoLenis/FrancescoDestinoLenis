@@ -12,7 +12,7 @@ import RxSwift
 class EventsCollectionViewController: UIViewController {
     
     var collectionView: EventsCollectionView?
-    let events = BehaviorRelay<[SGEvent]>(value: [])
+    let events = BehaviorSubject<[SGEvent]>(value: [])
     let disposeBag = DisposeBag()
     
     let cellScale: CGFloat = 0.7
@@ -42,6 +42,8 @@ class EventsCollectionViewController: UIViewController {
         
         self.view = self.collectionView
         
+        collectionView?.showBlurLoader()
+        
         self.events
             .asObservable()
             .observe(on: MainScheduler.asyncInstance)
@@ -49,6 +51,11 @@ class EventsCollectionViewController: UIViewController {
                 guard let self = self else { return }
                 if let view = self.collectionView {
                     view.reloadCollection()
+                }
+            }, onCompleted: { [weak self] in
+                guard let self = self else { return }
+                if let view = self.collectionView {
+                    view.removeBluerLoader()
                 }
             })
             .disposed(by: disposeBag)
