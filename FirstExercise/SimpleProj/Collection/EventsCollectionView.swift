@@ -29,7 +29,7 @@ class EventsCollectionView: UIView {
         setup()
     }
     
-    init(frame: CGRect, collectionViewDelegate: UICollectionViewDelegate, collectionViewDataSource: UICollectionViewDataSource, cellsize: CGSize, insetX: CGFloat, insetY: CGFloat) {
+    init(frame: CGRect, collectionViewDelegate: UICollectionViewDelegate, collectionViewDataSource: UICollectionViewDataSource, cellsize: CGSize) {
         super.init(frame: frame)
         
         collectionViewLayout.itemSize = cellsize

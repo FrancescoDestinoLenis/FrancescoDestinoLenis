@@ -36,11 +36,9 @@ class EventsCollectionViewController: UIViewController {
         
         let screenSize = UIScreen.main.bounds
         let cellwidth = floor(screenSize.width * cellScale)
-        let cellHeight = floor(screenSize.height * cellScale)
-        let insetX = (view.bounds.width - cellwidth) / 2
-        let insetY = (view.bounds.height - cellwidth) / 2
+        let cellHeight: CGFloat = 450
         
-        self.collectionView = EventsCollectionView(frame: self.view.frame, collectionViewDelegate: self, collectionViewDataSource: self, cellsize: CGSize(width: cellwidth, height: cellHeight), insetX: insetX, insetY: insetY)
+        self.collectionView = EventsCollectionView(frame: self.view.frame, collectionViewDelegate: self, collectionViewDataSource: self, cellsize: CGSize(width: cellwidth, height: cellHeight))
         
         self.view = self.collectionView
         
