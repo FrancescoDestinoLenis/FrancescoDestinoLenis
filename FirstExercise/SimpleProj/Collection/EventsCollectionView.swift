@@ -10,10 +10,13 @@ import UIKit
 
 class EventsCollectionView: UIView {
     
-    public lazy var collectionView: UICollectionView = {
+    private lazy var collectionViewLayout: CarouselFlowLayout = {
         let layout = CarouselFlowLayout(scrollDirection: .horizontal, minLineSpacing: 10, minInteritemSpacing: 20)
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return layout
+    }()
+    
+    public lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         
@@ -29,10 +32,7 @@ class EventsCollectionView: UIView {
     init(frame: CGRect, collectionViewDelegate: UICollectionViewDelegate, collectionViewDataSource: UICollectionViewDataSource, cellsize: CGSize, insetX: CGFloat, insetY: CGFloat) {
         super.init(frame: frame)
         
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        layout.itemSize = cellsize
-        collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
+        collectionViewLayout.itemSize = cellsize
         
         self.collectionView.delegate = collectionViewDelegate
         self.collectionView.dataSource = collectionViewDataSource
